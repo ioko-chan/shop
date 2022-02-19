@@ -111,4 +111,5 @@ public class AdminController {
         cakeService.createCake(cake);
         return new RedirectView("/adminka/cake");
     }
+
 }

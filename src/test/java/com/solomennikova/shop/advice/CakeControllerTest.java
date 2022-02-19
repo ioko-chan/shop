@@ -1,13 +1,11 @@
 package com.solomennikova.shop.advice;
 
 import com.solomennikova.shop.goods.CakeService;
-import com.solomennikova.shop.rest.controller.CakeController;
+import com.solomennikova.shop.rest.controller.example.CakeController;
 import com.solomennikova.shop.rest.dto.Cakes;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.test.util.AssertionErrors;
-
-import java.util.Collections;
 
 public class CakeControllerTest {
 

@@ -1,4 +1,4 @@
-package com.solomennikova.shop.rest.controller;
+package com.solomennikova.shop.rest.controller.foruser;
 
 import com.solomennikova.shop.exception.UserExistsException;
 import com.solomennikova.shop.orders.order.OrderService;
