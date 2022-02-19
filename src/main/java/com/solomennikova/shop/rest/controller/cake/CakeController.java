@@ -1,21 +1,12 @@
-package com.solomennikova.shop.rest.controller.example;
+package com.solomennikova.shop.rest.controller.cake;
 
 import com.solomennikova.shop.goods.CakeService;
-import com.solomennikova.shop.goods.CakeServiceImpl;
 import com.solomennikova.shop.rest.dto.Cake;
 import com.solomennikova.shop.rest.dto.Cakes;
-import com.solomennikova.shop.exception.CakeNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-
-import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @Validated

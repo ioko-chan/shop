@@ -1,4 +1,4 @@
-package com.solomennikova.shop.rest.controller;
+package com.solomennikova.shop.rest.controller.admin;
 
 import com.solomennikova.shop.goods.CakeService;
 import com.solomennikova.shop.orders.order.OrderService;
