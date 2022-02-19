@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Add new cake!</title>
+</head>
+<style>
+    body {
+        background: #2f2b2b;
+        color: #8a857f;
+    }
+
+</style>
+<body>
+<form action="#" method="post" th:action="@{/adminka/cake/create}" th:object="${cake}">
+    <p>
+        Name:
+        <label>
+            <input th:field="*{name}" type="text"/>
+        </label>
+    </p>
+    <p>
+        Image:
+        <label>
+            <input th:field="*{image}" type="text">
+        </label>
+    </p>
+    <p>
+        Calories:
+        <label>
+            <input th:field="*{calories}" type="text">
+        </label>
+    </p>
+    <p>
+        Price:
+        <label>
+            <input th:field="*{price}" type="text">
+        </label>
+    </p>
+    <p>
+        Weight:
+        <label>
+            <input th:field="*{weight}" type="text">
+        </label>
+    </p>
+
+
+    <p>
+        <input type="submit" value="Submit"/>
+    </p>
+</form>
+<h3 >
+    <a href="/adminka/cakes" style="color: #9d4b68">Back</a>
+</h3>
+
+</body>
+</html>

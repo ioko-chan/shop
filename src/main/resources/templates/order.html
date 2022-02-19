@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Order</title>
+</head>
+<body>
+<h3>
+    <a th:href="@{/adminka/orders}" style="color: #9d4b68">Orders list</a>
+</h3>
+<style>
+    body {
+        background: #2f2b2b;
+        color: #8a857f;
+    }
+
+</style>
+<form action="#" th:action="@{/adminka/order/{id}/status(id=${order.id})}" th:object="${order}" method="post">
+    <label for="status"></label>
+    <select id="status" name="status">
+        <option th:each="status : ${order.orderStatus.values()}"
+                th:value="${status}"
+                th:text="${status}"
+                th:selected="${order.orderStatus == status}">
+        </option>
+    </select>
+    <input type="submit" value="Submit" />
+</form>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>User's name</th>
+        <th>User's number</th>
+        <th>Payment method</th>
+        <th>Order status</th>
+        <th>Purchases</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${order.user.name}"></td>
+        <td th:text="${order.user.number}"></td>
+        <td th:text="${order.payment}"></td>
+        <td th:text="${order.orderStatus}"></td>
+        <td th:text="${order.purchases}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Cake</title>
+</head>
+<style>
+    body {
+        background: #2f2b2b;
+        color: #8a857f;
+    }
+    table, th, td {
+        border: 4px solid #736f6f;
+        margin: auto;
+    }
+</style>
+<body >
+<h3  >
+
+</h3>
+<h4 >
+<table class="table table-striped" >
+    <thead>
+    <tr>
+        <th>Cake</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Weight</th>
+        <th>Calories</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${cake.name}"></td>
+        <td><img src="" th:src="@{/img/{cakeImage}(cakeImage=${cake.image})}" alt="cake image"></td>
+        <td th:text="${cake.price}"></td>
+        <td th:text="${cake.weight}"></td>
+        <td th:text="${cake.calories}"></td>
+        <td>
+            <form action="#" method="get" th:action="@{/adminka/cake/delete/{id}(id=${cake.id})}">
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</h4>
+<h3 >
+    <a href="/adminka/cakes" style="color: #9d4b68">Back</a>
+</h3>
+
+</body>
+</html>

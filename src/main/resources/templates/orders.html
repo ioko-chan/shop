@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Orders</title>
+</head>
+<style>
+    .text {
+        text-align:  center;
+    }
+    body {
+        background: #2f2b2b;
+        color: #8a857f;
+    }
+    table, th, td {
+        border: 4px solid #736f6f;
+        margin: auto;
+    }
+
+</style>
+<body>
+<h2>
+    <a  th:href="@{/adminka/menu}"  style="color: #9d4b68"><div class="text">Menu</div></a>
+</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>User's name</th>
+        <th>User's email</th>
+        <th>Payment method</th>
+        <th>Order status</th>
+        <th>Purchases</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="order : ${orders}">
+        <td th:text="${order.user.name}"></td>
+        <td th:text="${order.user.number}"></td>
+        <td th:text="${order.orderStatus}"></td>
+        <td th:text="${order.payment}"></td>
+        <td>
+            <ul th:each="purchase : ${order.purchases}">
+                <li th:text="${purchase}"></li>
+            </ul>
+        </td>
+        <td>
+            <a th:href="@{/adminka/order/{id} (id=${order.id})}">Edit</a>
+        </td>
+        <td>
+            <form action="#" method="get" th:action="@{/adminka/order/delete/{id}(id=${order.id})}">
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

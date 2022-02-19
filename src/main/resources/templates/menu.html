@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Menu</title>
+
+</head>
+<style>
+    .text {
+        text-align:  center;
+    }
+    body {
+        background: #2f2b2b;
+        color: #8a857f;
+    }
+
+</style>
+<body>
+
+<h1>
+    <a th:href="@{/adminka/orders}" style="color: #9d4b68"><div class="text">Orders list </div></a>
+</h1>
+<h1>
+    <a th:href="@{/adminka/cakes}" style="color: #9d4b68"><div class="text">Cakes list</div></a>
+</h1>
+<h1>
+    <a th:href="@{/adminka/users}" style="color: #9d4b68"><div class="text">Users list</div></a>
+</h1>
+
+</body>
+</html>

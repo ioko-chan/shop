@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Cakes shop</title>
+</head>
+<style>
+
+    form{padding:14px}
+    .text {
+        text-align:  center;
+    }
+    body {
+
+        background: #2f2b2b;
+        color: #8a857f;
+
+    }
+    table, th, td {
+        border: 4px solid #736f6f;
+        margin: auto;
+    }
+</style>
+<body>
+<h1>
+    <a th:href="@{/adminka/menu}" style="color: #9d4b68"><div class="text">Menu</div></a>
+</h1>
+<table style="border-collapse: collapse" class="table table-striped">
+    <thead>
+    <tr>
+        <th>Cake</th>
+        <th>Image</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cake : ${cakes}">
+         <td  th:text="${cake.name}"></td>
+        <td> <img src="" th:src="@{/img/{cakeImage}(cakeImage=${cake.image})}" alt="cake image">  </td>
+        <td th:text="${cake.price}"></td>
+        <td>
+            <form action="#" method="get" th:action="@{/adminka/cake/{id}(id=${cake.id})}">
+                <input type="submit" value="Details"/>
+
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<form action="#" method="get" th:action="@{/adminka/cake/create}">
+    <input type="submit" value="Add"/>
+
+</form>
+</body>
+</html>

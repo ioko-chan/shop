@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<style>
+    body {
+        background: #2f2b2b;
+        color: #8a857f;
+    }
+
+</style>
+<body>
+<h3>
+    <a th:href="@{/adminka/menu}" style="color: #9d4b68">Menu</a>
+</h3>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>User's name</th>
+        <th>User's number</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.number}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

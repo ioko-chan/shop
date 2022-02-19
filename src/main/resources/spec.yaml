@@ -1,0 +1,69 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: 'http'
+paths:
+   /cake:
+     get:
+       description: Получить список всех тортиков
+       responses:
+         200:
+           description: Успешное выполнение сервиса
+           content:
+             application/json:
+               schema:
+                 oneOf:
+                   - $ref: '#/components/schemas/cakes'
+     post:
+       description: Добавить тортик
+       responses:
+         200:
+           description: Успешное выполнение сервиса
+           content:
+             application/json:
+
+
+
+
+components:
+  schemas:
+    cakes:
+      additionalProperties: false
+      type: object
+      properties:
+        cake_list:
+          type: array
+          items:
+            $ref: '#/components/schemas/cake'
+
+
+    cake:
+      type: object
+      description: Данные о тортике
+      required:
+        - name
+        - calories
+        - price
+        - weight
+        - image
+      properties:
+        name:
+          type: string
+          description: Название тортика
+        calories:
+          type: number
+          description: Каллорийность тортика
+        image:
+          type: string
+          description: Относительное url картинки
+        price:
+          type: number
+          description: Цена тортика
+        weight:
+          type: number
+          description: Вес тортика
+
+
